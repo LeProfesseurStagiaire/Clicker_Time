@@ -18,31 +18,7 @@
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="dessin.svg">
   <defs
-     id="defs2">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient834">
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
-         offset="0"
-         id="stop830" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
-         offset="1"
-         id="stop832" />
-    </linearGradient>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient834"
-       id="radialGradient842"
-       cx="264.66599"
-       cy="339.18845"
-       fx="264.66599"
-       fy="339.18845"
-       r="12.291273"
-       gradientTransform="matrix(1,0,0,2.8147782,-59.922795,-514.72329)"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
+     id="defs2" />
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -50,11 +26,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="2580.7161"
-     inkscape:cy="-63.404987"
+     inkscape:zoom="0.7"
+     inkscape:cx="1405.0091"
+     inkscape:cy="-73.922372"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g836"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -125,18 +101,6 @@
        preserveAspectRatio="none"
        height="172.55066"
        width="125.984" />
-    <rect
-       style="opacity:1;fill:url(#radialGradient842);fill-opacity:1;stroke:none;stroke-width:2.3269999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.44491529"
-       id="rect820"
-       width="24.096205"
-       height="87.622452"
-       x="205.76648"
-       y="388.39886"
-       ry="0"
-       transform="rotate(-30)"
-       inkscape:export-filename="C:\Users\Ange\Desktop\godot_games\ball_game\assets\texture\sablier_3.png"
-       inkscape:export-xdpi="150"
-       inkscape:export-ydpi="150" />
     <g
        id="g836"
        transform="translate(-140.57568,57.79826)"
@@ -145,9 +109,13 @@
        inkscape:export-filename="C:\Users\Ange\Desktop\godot_games\ball_game\assets\texture\sablier_3.png">
       <path
          style="fill:#d0d0d0;fill-opacity:0.39285715;stroke:#343537;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 512.83533,343.64816 c -1.16542,-0.27698 -2.55595,-1.74276 -2.83707,-2.99063 -0.26809,-1.19002 -0.26868,-2.47695 -0.002,-3.50628 0.13155,-0.507 8.60752,-15.34044 22.81225,-39.92276 16.30205,-28.21189 22.60295,-39.25761 22.60306,-39.624 1.1e-4,-0.3667 -6.28677,-11.38791 -22.60291,-39.62399 -14.2043,-24.58144 -22.68084,-39.41578 -22.81239,-39.92277 -0.26709,-1.02931 -0.2665,-2.31624 0.002,-3.50628 0.17518,-0.7776 0.3689,-1.09426 1.143,-1.86836 0.7741,-0.7741 1.09076,-0.96782 1.86836,-1.143 1.37111,-0.30888 118.16831,-0.30888 119.53942,0 0.7776,0.17518 1.09426,0.3689 1.86836,1.143 0.7741,0.7741 0.96782,1.09076 1.143,1.86836 0.26794,1.18934 0.2687,2.47636 0.002,3.50628 -0.13142,0.5077 -8.58388,15.3071 -22.80129,39.92277 -12.42585,21.51379 -22.62629,39.27978 -22.66764,39.47996 -0.0531,0.2571 6.58102,11.89244 22.59243,39.62401 14.25656,24.69216 22.74513,39.55938 22.87649,40.06678 0.26663,1.02991 0.26587,2.31693 -0.002,3.50628 -0.17518,0.77761 -0.3689,1.09427 -1.143,1.86837 -0.7741,0.77409 -1.09075,0.96781 -1.86836,1.143 -1.25143,0.28193 -118.52565,0.26161 -119.71371,-0.0207 z"
+         d="m 512.83533,343.64816 c -1.16542,-0.27698 -2.55595,-1.74276 -2.83707,-2.99063 -0.26809,-1.19002 -0.26868,-2.47695 -0.002,-3.50628 0.13155,-0.507 -3.48772,-21.01008 10.71701,-45.5924 16.30205,-28.21189 34.69819,-33.58797 34.6983,-33.95436 1.1e-4,-0.3667 -17.51209,1.97557 -33.82823,-26.26051 -14.2043,-24.58144 -11.45552,-52.77926 -11.58707,-53.28625 -0.26709,-1.02931 -0.2665,-2.31624 0.002,-3.50628 0.17518,-0.7776 0.3689,-1.09426 1.143,-1.86836 0.7741,-0.7741 1.09076,-0.96782 1.86836,-1.143 1.37111,-0.30888 118.16831,-0.30888 119.53942,0 0.7776,0.17518 1.09426,0.3689 1.86836,1.143 0.7741,0.7741 0.96782,1.09076 1.143,1.86836 0.26794,1.18934 0.2687,2.47636 0.002,3.50628 -0.13142,0.5077 1.57236,27.06696 -12.64505,51.68263 -12.42585,21.51379 -32.78253,27.51992 -32.82388,27.7201 -0.0531,0.2571 20.18816,1.68708 36.19957,29.41865 14.25656,24.69216 9.13799,49.76474 9.26935,50.27214 0.26663,1.02991 0.26587,2.31693 -0.002,3.50628 -0.17518,0.77761 -0.3689,1.09427 -1.143,1.86837 -0.7741,0.77409 -1.09075,0.96781 -1.86836,1.143 -1.25143,0.28193 -118.52565,0.26161 -119.71371,-0.0207 z"
          id="path850"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccsssccsccsccscscccccc"
+         inkscape:export-filename="C:\Users\Ange\Desktop\godot_games\ball_game\assets\texture\sablier_4.png"
+         inkscape:export-xdpi="150"
+         inkscape:export-ydpi="150" />
     </g>
     <circle
        style="opacity:1;fill:#d0d0d0;fill-opacity:0.39285715;stroke:#343537;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"

@@ -1,10 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://script/sand.gd" type="Script" id=1]
 [ext_resource path="res://assets/texture/ball_3.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4.34186, 4.23973 )
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 4.83, 3.63, 0.51, 4.69, -8.18, 3.26, -10.16, -5.19, -3.66, -10.96, 5.13, -8.96, 7.73, -2.36, 6.46, 0 )
 
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 1
@@ -19,6 +19,36 @@ angle = 720.0
 angle_random = 1.0
 scale = 12.49
 scale_random = 1.0
+
+[sub_resource type="Animation" id=4]
+resource_name = "anim"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 9.5, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.980392, 0.858824, 0.211765, 0.890196 ), Color( 0.980392, 0.858824, 0.211765, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 10 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
 
 [node name="sand" type="Node2D"]
 modulate = Color( 0.980392, 0.858824, 0.211765, 0.890196 )
@@ -41,4 +71,8 @@ shape = SubResource( 3 )
 lifetime = 0.5
 local_coords = false
 process_material = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "anim"
+anims/anim = SubResource( 4 )
 

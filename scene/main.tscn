@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://script/main.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://assets/texture/sablier_3.png" type="Texture" id=3]
+[ext_resource path="res://assets/texture/sablier_4.png" type="Texture" id=3]
 [ext_resource path="res://assets/texture/button_pressed.png" type="Texture" id=4]
 [ext_resource path="res://assets/texture/button_hover.png" type="Texture" id=5]
 [ext_resource path="res://assets/texture/button_normal.png" type="Texture" id=6]
@@ -13,6 +13,8 @@ font_path = "res://assets/font/Pacifico-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 1 )
 
 [sub_resource type="Shader" id=3]
@@ -36,11 +38,31 @@ shader_param/size_y = 0.008
 
 [sub_resource type="SegmentShape2D" id=5]
 a = Vector2( 344.261, -477.918 )
-b = Vector2( 72.3832, 1.77597 )
+b = Vector2( 310.028, -265.774 )
+
+[sub_resource type="SegmentShape2D" id=11]
+a = Vector2( 251.091, -168.428 )
+b = Vector2( 310.028, -265.774 )
+
+[sub_resource type="SegmentShape2D" id=15]
+a = Vector2( 252.697, -170.965 )
+b = Vector2( 206.645, -91.9845 )
+
+[sub_resource type="SegmentShape2D" id=12]
+a = Vector2( 207.616, -93.487 )
+b = Vector2( 74.6379, -2.77307 )
 
 [sub_resource type="SegmentShape2D" id=6]
 a = Vector2( -341.871, -477.626 )
-b = Vector2( -72.1327, 3.06628 )
+b = Vector2( -322.859, -260.774 )
+
+[sub_resource type="SegmentShape2D" id=13]
+a = Vector2( -223.267, -93.1818 )
+b = Vector2( -322.859, -260.774 )
+
+[sub_resource type="SegmentShape2D" id=14]
+a = Vector2( -225.213, -94.6366 )
+b = Vector2( -83.0807, -7.92725 )
 
 [sub_resource type="SegmentShape2D" id=7]
 b = Vector2( 2000, 0 )
@@ -108,6 +130,18 @@ tracks/3/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("intro_text:custom_fonts/font:outline_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 4.1, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 15, 1 ]
+}
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -119,9 +153,20 @@ margin_right = 674.0
 margin_bottom = 905.0
 color = Color( 0.207843, 0.207843, 0.207843, 1 )
 
+[node name="sand_spawner" type="Node2D" parent="."]
+
 [node name="info_container" type="Node2D" parent="."]
 
-[node name="sand_spawner" type="Node2D" parent="."]
+[node name="global_time" type="Label" parent="."]
+margin_left = -496.998
+margin_top = 655.947
+margin_right = -213.998
+margin_bottom = 688.947
+rect_scale = Vector2( 5.6054, 5.6054 )
+custom_fonts/font = SubResource( 2 )
+text = "1000"
+align = 1
+valign = 1
 
 [node name="time" type="Label" parent="."]
 margin_left = -851.9
@@ -137,12 +182,13 @@ valign = 1
 [node name="pixel_filter" type="TextureRect" parent="."]
 material = SubResource( 4 )
 margin_right = 632.0
-margin_bottom = 839.0
+margin_bottom = 885.0
 rect_scale = Vector2( 0.942116, 0.947341 )
 texture = ExtResource( 2 )
 expand = true
 
 [node name="sablier" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 300, 399 )
 scale = Vector2( 0.875503, 0.875503 )
 texture = ExtResource( 3 )
@@ -152,8 +198,23 @@ texture = ExtResource( 3 )
 [node name="col_r" type="CollisionShape2D" parent="sablier/sablier_body"]
 shape = SubResource( 5 )
 
+[node name="col_r2" type="CollisionShape2D" parent="sablier/sablier_body"]
+shape = SubResource( 11 )
+
+[node name="col_r4" type="CollisionShape2D" parent="sablier/sablier_body"]
+shape = SubResource( 15 )
+
+[node name="col_r3" type="CollisionShape2D" parent="sablier/sablier_body"]
+shape = SubResource( 12 )
+
 [node name="col_l" type="CollisionShape2D" parent="sablier/sablier_body"]
 shape = SubResource( 6 )
+
+[node name="col_l2" type="CollisionShape2D" parent="sablier/sablier_body"]
+shape = SubResource( 13 )
+
+[node name="col_l3" type="CollisionShape2D" parent="sablier/sablier_body"]
+shape = SubResource( 14 )
 
 [node name="sand_delay" type="Timer" parent="sablier"]
 
@@ -182,7 +243,15 @@ position = Vector2( -661.329, 618.174 )
 shape = SubResource( 7 )
 
 [node name="intro" type="Node2D" parent="."]
-editor/display_folded = true
+
+[node name="TextureProgress" type="TextureProgress" parent="intro"]
+margin_left = 266.316
+margin_top = 469.751
+margin_right = 604.316
+margin_bottom = 1056.75
+rect_scale = Vector2( 0.21462, 0.21462 )
+texture_progress = ExtResource( 7 )
+fill_mode = 3
 
 [node name="intro_text" type="Label" parent="intro"]
 margin_left = 7.86722
@@ -193,15 +262,6 @@ custom_fonts/font = SubResource( 9 )
 text = "press the 
 button to earn time "
 align = 1
-
-[node name="TextureProgress" type="TextureProgress" parent="intro"]
-margin_left = 266.316
-margin_top = 443.158
-margin_right = 604.316
-margin_bottom = 1030.16
-rect_scale = Vector2( 0.21462, 0.21462 )
-texture_progress = ExtResource( 7 )
-fill_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="intro"]
 autoplay = "intro"
